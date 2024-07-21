@@ -8,9 +8,6 @@ OBJS = $(patsubst src/%.c,build/%.o,$(SRC))
 
 BIN = build/main
 
-run: $(BIN)
-	$(BIN)
-
 $(BIN): $(OBJS)
 	$(CC) -o $@ $^ $(CFLAGS) 
 
@@ -19,3 +16,7 @@ build/%.o: src/%.c
 
 clean:
 	rm build/*
+
+run: $(BIN)
+	$(BIN)
+
